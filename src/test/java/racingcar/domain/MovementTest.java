@@ -16,19 +16,11 @@ public class MovementTest {
         assertThat(movement).isNotNull();
     }
 
-    @ParameterizedTest
-    @ValueSource(ints = {4,5,6,7,8,9})
-    void 이동_테스트(int value){
+    @Test
+    void 이동_테스트(){
         Movement movement = new Movement();
-        movement.moving(value);
+        movement.moving();
         assertThat(movement.getDistance()).isEqualTo(1);
     }
 
-    @ParameterizedTest
-    @ValueSource(ints = {0,1,2,3})
-    void 멈춤_테스트(int value){
-        Movement movement = new Movement();
-        movement.moving(value);
-        assertThat(movement.getDistance()).isEqualTo(0);
-    }
 }
